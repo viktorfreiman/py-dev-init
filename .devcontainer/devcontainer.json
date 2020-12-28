@@ -1,0 +1,25 @@
+{
+  "name": "Python 3",
+  "dockerFile": "Dockerfile",
+
+  // Set *default* container specific settings.json values on container create.
+  "settings":  {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+	"ms-python.python",
+	"davidanson.vscode-markdownlint",
+	"yzhang.markdown-all-in-one",
+	"jsynowiec.vscode-insertdatestring",
+	"ms-python.vscode-pylance"
+],
+  
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // Install lint
+  "postCreateCommand": "python3 -m pip install --user flake8 flake8-bugbear flake8-quotes black",
+
+  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}
