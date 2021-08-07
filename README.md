@@ -1,7 +1,7 @@
 # Python3 development start
 
 Version: see setup.cfg  
-Last Updated: 2021-04-24  
+Last Updated: 2021-08-07  
 
 A kickstart repo when developing Python3  
 
@@ -10,6 +10,7 @@ You just need to have vscode, docker and [Remote Development Extension Pack](htt
 - [Python3 development start](#python3-development-start)
   - [Features](#features)
   - [Changelog](#changelog)
+    - [v1.2.0](#v120)
     - [v1.1.1](#v111)
     - [v1.1.0](#v110)
     - [v1.0.0](#v100)
@@ -21,6 +22,10 @@ You just need to have vscode, docker and [Remote Development Extension Pack](htt
 - good/needed vscode extensions  
 
 ## Changelog
+
+### v1.2.0
+
+- Fixed devcontainer to better cache
 
 ### v1.1.1
 

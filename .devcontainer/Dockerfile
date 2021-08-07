@@ -37,22 +37,22 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 # Configure apt and install packages
-RUN \
-    #
-    apt-get update \
-    && apt-get install -y vim \
-    #
-    # get vanila bash
-    # use zsh (already installed) if you want a 'better' shell
-    # remove old .bashrc
-    && rm /home/$USERNAME/.bashrc \
-    # download a good neutral .bashrc and save it in /home/$USERNAME/
-    && wget -P /home/$USERNAME/ --content-disposition "https://gist.githubusercontent.com/viktorfreiman/e191f7cd59cb2a51228693e0f4a0754b/raw/26b049086218292dcbf9ec52fb71c9e696f38182/.bashrc" \
-    # Clean up
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && mkdir -p /home/$USERNAME/.local/share \
-    && chown -R $USERNAME /home/$USERNAME
+RUN apt update
+
+RUN apt install -y vim jq
+
+# get vanila bash
+# use zsh (already installed) if you want a 'better' shell
+# remove old .bashrc
+RUN rm /home/$USERNAME/.bashrc
+# download a good neutral .bashrc and save it in /home/$USERNAME/
+RUN cp /etc/skel/.bashrc /home/$USERNAME/.bashrc
+
+# Clean up
+RUN apt autoremove -y
+RUN apt clean -y
+RUN mkdir -p /home/$USERNAME/.local/share
+RUN chown -R $USERNAME /home/$USERNAME
 
 ENV XDG_DATA_HOME=/home/$USERNAME/.local/share
 
