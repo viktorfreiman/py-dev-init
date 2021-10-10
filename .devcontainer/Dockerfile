@@ -36,23 +36,24 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-# Configure apt and install packages
-RUN apt update
+# https://github.com/microsoft/vscode-dev-containers/blob/main/CONTRIBUTING.md#why-do-dockerfiles-in-this-repository-use-run-statements-with-commands-separated-by-
 
-RUN apt install -y vim jq
+# Configure apt and install packages
+RUN apt update && apt install -y vim jq bash-completion
 
 # get vanila bash
 # use zsh (already installed) if you want a 'better' shell
-# remove old .bashrc
-RUN rm /home/$USERNAME/.bashrc
-# download a good neutral .bashrc and save it in /home/$USERNAME/
-RUN cp /etc/skel/.bashrc /home/$USERNAME/.bashrc
+# remove old .bashrc and reset bashrc to default
+RUN cp /etc/skel/.bashrc /home/$USERNAME/.bashrc \
+    && echo "\n\
+alias l='ls -alh' \n\
+alias p='python'" >> /home/$USERNAME/.bashrc
 
 # Clean up
-RUN apt autoremove -y
-RUN apt clean -y
-RUN mkdir -p /home/$USERNAME/.local/share
-RUN chown -R $USERNAME /home/$USERNAME
+RUN apt autoremove -y \
+    && apt clean -y \
+    && mkdir -p /home/$USERNAME/.local/share \
+    && chown -R $USERNAME /home/$USERNAME
 
 ENV XDG_DATA_HOME=/home/$USERNAME/.local/share
 
