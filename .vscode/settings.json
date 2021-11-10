@@ -1,10 +1,11 @@
 {
+    "debug.internalConsoleOptions": "neverOpen",
+    "editor.renderWhitespace": "all",
     "files.eol": "\n",
     "python.formatting.provider": "black",
-    "python.linting.flake8Enabled": true,
+    "python.languageServer": "Pylance",
     "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
-    "debug.internalConsoleOptions": "neverOpen",
     "python.pythonPath": "/usr/local/bin/python",
-    "editor.renderWhitespace": "all"
 }
