@@ -1,1 +1,3 @@
 toml
+sphinx-argparse
+sphinxcontrib-kroki

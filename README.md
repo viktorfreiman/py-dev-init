@@ -2,6 +2,7 @@
 
 - [py-dev-init](#py-dev-init)
   - [Changelog](#changelog)
+    - [v0.1.4](#v014)
     - [v0.1.3](#v013)
     - [v0.1.2](#v012)
 
@@ -14,6 +15,10 @@ All docs are in the docs folder
 Source code is in py-dev-init  
 
 ## Changelog
+
+### v0.1.4
+
+- Fix 2, Added missing dependency for readthedocs
 
 ### v0.1.3
 
