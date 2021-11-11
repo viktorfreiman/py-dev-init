@@ -6,6 +6,8 @@
     - [v0.1.3](#v013)
     - [v0.1.2](#v012)
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/viktorfreiman/py-dev-init)
+
 For setup see [development.rst](docs/development.rst)
 
 A complete kickstart devcontainer repository for python3  
