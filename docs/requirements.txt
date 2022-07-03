@@ -1,3 +1,4 @@
 toml
 sphinx-argparse
 sphinxcontrib-kroki
+sphinx_copybutton
