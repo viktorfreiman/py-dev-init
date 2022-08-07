@@ -2,6 +2,7 @@
 
 - [py-dev-init](#py-dev-init)
   - [Changelog](#changelog)
+    - [v0.3.0](#v030)
     - [v0.2.0](#v020)
     - [v0.1.4](#v014)
     - [v0.1.3](#v013)
@@ -16,6 +17,12 @@ All docs are in the docs folder
 Source code is in py-dev-init  
 
 ## Changelog
+
+### v0.3.0
+
+- remove sphobjinv dependency
+- add docs-helper
+- add sphinx_copybutton to sphinx conf.py
 
 ### v0.2.0
 

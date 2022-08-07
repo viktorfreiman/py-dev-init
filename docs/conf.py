@@ -50,6 +50,7 @@ version = release
 # ones.
 extensions = [
     # "autoapi.extension",
+    "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.coverage",
