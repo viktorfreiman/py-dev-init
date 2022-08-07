@@ -3,14 +3,13 @@
   "dockerFile": "Dockerfile",
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-	"ms-python.python",
-	"davidanson.vscode-markdownlint",
-	"yzhang.markdown-all-in-one",
-	"jsynowiec.vscode-insertdatestring",
-	"ms-python.vscode-pylance",
-	"tamasfe.even-better-toml",
-	"trond-snekvik.simple-rst"
-],
+    "ms-python.python",
+    "davidanson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "jsynowiec.vscode-insertdatestring",
+    "tamasfe.even-better-toml",
+    "trond-snekvik.simple-rst",
+  ],
   // Use 'postCreateCommand' to run commands after the container is created.
   // Install lint
   // "postCreateCommand": "python3 -m pip install -r dev-requirements.txt;python3 -m pip install -r requirements.txt",

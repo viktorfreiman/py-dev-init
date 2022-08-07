@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-dev-init"
-version = "0.1.4"
+version = "0.2.0"
 description = "Kickstart repo"
 authors = ["Viktor Freiman <freiman.viktor@gmail.com>"]
 license = "MIT"

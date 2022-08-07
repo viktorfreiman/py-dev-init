@@ -48,8 +48,9 @@ Intersphinx
 ***********
 
 Intersphinx is a fantastic tool that enables you to automatic cross-reference and generating links other projects that uses sphinx.
-Run ``scripts/docs_helper.py`` and use the interactive guide to help with linking
+Run ``docs-helper`` and use the interactive guide to help with linking
 
+* `docs-helper <http://docs-helper.rtfd.io/>`
 * `rtd docs <https://docs.readthedocs.io/en/stable/guides/intersphinx.html>`_ about intersphinx
 * `sphobjinv <https://github.com/bskinn/sphobjinv>`_ is a tool to help linking with cross-reference
 

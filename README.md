@@ -2,6 +2,7 @@
 
 - [py-dev-init](#py-dev-init)
   - [Changelog](#changelog)
+    - [v0.2.0](#v020)
     - [v0.1.4](#v014)
     - [v0.1.3](#v013)
     - [v0.1.2](#v012)
@@ -15,6 +16,13 @@ All docs are in the docs folder
 Source code is in py-dev-init  
 
 ## Changelog
+
+### v0.2.0
+
+- fix bug with python vscode plugin
+- move to single RUN in Dockerfile
+- remove scripts folder
+- docs-helper is now a package
 
 ### v0.1.4
 

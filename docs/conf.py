@@ -14,7 +14,6 @@ import toml
 
 docs_path = Path(__file__).absolute().parent
 project_path = docs_path.parent
-scripts_path = project_path / "scripts"
 
 # extract out the repo name from git
 repo_name = Path(
@@ -26,9 +25,7 @@ repo_name = Path(
 source_path = project_path / repo_name
 
 # Add path for sphinx to find
-sys.path.extend(
-    [str(docs_path), str(project_path), str(scripts_path), str(source_path)]
-)
+sys.path.extend([str(docs_path), str(project_path), str(source_path)])
 
 # -- Project information -----------------------------------------------------
 
@@ -52,7 +49,7 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_copybutton",
+    # "autoapi.extension",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.coverage",
@@ -70,7 +67,6 @@ extensions = [
 ]
 
 
-# try is for when running docs_helper.py
 try:
     # PDF output is a bit special in sphinx
     # rinotype don't have super good support with all sphinx extensions
@@ -99,7 +95,8 @@ autodoc_default_options = {
 #    :no-undoc-members:
 
 # --- Intersphinx ----------------------------------------
-# Use scripts/docs_helper.py to help with linking
+# Use docs-helper to help with linking
+# http://docs-helper.rtfd.io/
 # https://docs.readthedocs.io/en/stable/guides/intersphinx.html
 # check with https://github.com/bskinn/sphobjinv
 
@@ -138,6 +135,8 @@ html_static_path = ["_static"]
 # using the given strftime() format.
 # The empty string is equivalent to '%b %d, %Y' (or a locale-dependent equivalent).
 html_last_updated_fmt = ""
+
+manpages_url = "https://manpages.debian.org/{path}"
 
 # --- Options for rinohtype (PDF output) -----------------------------------
 # http://www.mos6581.org/rinohtype/master/sphinx.html#confval-rinoh_template
