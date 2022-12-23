@@ -104,3 +104,7 @@ venv.bak/
 .mypy_cache/
 /.history
 .python_packages
+
+# pdm
+.pdm.toml
+__pypackages__/

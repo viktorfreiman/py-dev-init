@@ -1,19 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "name": "Python 3",
-  "dockerFile": "Dockerfile",
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [
-    "ms-python.python",
-    "davidanson.vscode-markdownlint",
-    "yzhang.markdown-all-in-one",
-    "jsynowiec.vscode-insertdatestring",
-    "tamasfe.even-better-toml",
-    "trond-snekvik.simple-rst",
-  ],
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // Install lint
-  // "postCreateCommand": "python3 -m pip install -r dev-requirements.txt;python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "poetry install",
-  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode"
+    "name": "Python 3",
+    "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-from-docker:1": {},
+        "ghcr.io/devcontainers-contrib/features/pdm:1": {},
+        "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "bash-completion,iputils-ping,dnsutils"
+        },
+        "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "be5invis.toml",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "cat .bashrc >> $HOME/.bashrc;pip install -e .[dev]"
 }

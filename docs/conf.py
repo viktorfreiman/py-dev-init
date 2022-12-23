@@ -4,14 +4,40 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
+import importlib.util
 import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
 
-import toml
 
+def get_py_config(path: Path | str):
+    """Get dynimic values from python code
+
+    Uses importlib.util tricks to import without the problems of edit sys.path
+    and python lint missing imports
+
+    .. note::
+        This function will execute the input file
+
+    from:
+    https://docs.python.org/3/library/importlib.html#importing-a-source-file-directly
+    """
+    module_name = Path(path).name
+
+    spec = importlib.util.spec_from_file_location(module_name, path)
+    module = importlib.util.module_from_spec(spec)
+
+    # sys.mod is good to set
+    sys.modules[module_name] = module
+
+    # Execte the imported file
+    spec.loader.exec_module(module)
+
+    return module
+
+
+# -- Path setup --------------------------------------------------------------
 docs_path = Path(__file__).absolute().parent
 project_path = docs_path.parent
 
@@ -21,6 +47,9 @@ repo_name = Path(
     .decode("utf-8")
     .strip()
 ).stem
+
+# per python standard you "can't" use import names with dash
+repo_name = repo_name.replace("-", "_")
 
 source_path = project_path / repo_name
 
@@ -34,11 +63,9 @@ project = repo_name
 author = "Viktor Freiman"
 copyright = f"{datetime.now().year}, {author}"
 
-
-pyproject = toml.load(project_path / "pyproject.toml")
-
 # The full version, including alpha/beta/rc tags
-release = pyproject["tool"]["poetry"]["version"]
+# https://pdm.fming.dev/latest/pyproject/build/#dynamic-version-from-file
+release = get_py_config(source_path / "__init__.py").__version__
 
 # set version to display it in the sidebar
 version = release
@@ -49,7 +76,6 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # "autoapi.extension",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosectionlabel",
@@ -63,7 +89,6 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
-    "sphinxarg.ext",
     "sphinxcontrib.kroki",
 ]
 

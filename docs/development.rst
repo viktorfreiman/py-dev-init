@@ -9,7 +9,7 @@ Includes
     - QoL plugins for vscode
     - Added programs
         - jq
-        - poetry
+        - pdm
 
 Setup
 *****
@@ -43,6 +43,15 @@ To audobuild html docs when developing
     # OR use the alias
     autobuild-html-docs
 
+Sometimes sphinx-autobuild webserver can be a bit slow use sws insted
+it's installed and just run:
+
+.. code-block:: sh
+
+    ./sws --root _build/html/
+
+It listens on port 80
+https://github.com/static-web-server/static-web-server
 
 Intersphinx
 ***********

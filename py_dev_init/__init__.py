@@ -6,6 +6,8 @@ This is a docstring
 """
 import requests
 
+__version__ = "1.0.0"
+
 
 def main():
     """Make a requests to "https://example.com/" """

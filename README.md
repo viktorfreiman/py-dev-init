@@ -2,6 +2,7 @@
 
 - [py-dev-init](#py-dev-init)
   - [Changelog](#changelog)
+    - [v1.0.0](#v100)
     - [v0.3.0](#v030)
     - [v0.2.0](#v020)
     - [v0.1.4](#v014)
@@ -17,6 +18,11 @@ All docs are in the docs folder
 Source code is in py-dev-init  
 
 ## Changelog
+
+### v1.0.0
+
+- moved from poetry to pdm
+- complete rework of devcontainer
 
 ### v0.3.0
 
