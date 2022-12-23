@@ -9,9 +9,10 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Union
 
 
-def get_py_config(path: Path | str):
+def get_py_config(path: Union[Path, str]):
     """Get dynimic values from python code
 
     Uses importlib.util tricks to import without the problems of edit sys.path

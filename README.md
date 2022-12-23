@@ -2,6 +2,7 @@
 
 - [py-dev-init](#py-dev-init)
   - [Changelog](#changelog)
+    - [v1.0.1](#v101)
     - [v1.0.0](#v100)
     - [v0.3.0](#v030)
     - [v0.2.0](#v020)
@@ -18,6 +19,10 @@ All docs are in the docs folder
 Source code is in py-dev-init  
 
 ## Changelog
+
+### v1.0.1
+
+- fixed bug with build
 
 ### v1.0.0
 
