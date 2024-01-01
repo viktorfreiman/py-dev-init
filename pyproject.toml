@@ -7,23 +7,22 @@ version = {source = "file", path = "py_dev_init/__init__.py"}
 # $ pip install .[dev]
 # we don't want to use PEP 582 or virtualenv
 dev = [
-    "Sphinx>=5.3.0",
-    "black>=22.12.0",
-    "flake8>=6.0.0",
-    "flake8-bugbear>=22.12.6",
-    "flake8-quotes>=3.3.1",
-    "rinohtype>=0.5.4",
-    "sphinx-autobuild>=2021.3.14",
-    "sphinx-rtd-theme>=1.1.1",
-    "sphinxcontrib-autoprogram>=0.1.7",
-    "docs-helper>=0.0.9",
-    "pytest>=7.2.0",
-    "sphinx-copybutton>=0.5.1",
+    "black",
+    "docs-helper",
+    "pytest",
+    "rinohtype",
+    "ruff",
+    "sphinx-autobuild",
+    "sphinx-copybutton",
+    "sphinx-rtd-theme",
+    "Sphinx",
+    "sphinxcontrib-autoprogram",
+    "sphinxcontrib.kroki",
 ]
 
 [project]
 authors = [{name = "Viktor Freiman", email = "freiman.viktor@gmail.com"}]
-dependencies = ["requests>=2.28.1"]
+dependencies = ["requests"]
 description = "Kickstart repo, change this"
 dynamic = ["version"]
 license = {text = "MIT"}
