@@ -5,8 +5,8 @@
     "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
     "features": {
         "ghcr.io/devcontainers/features/docker-from-docker:1": {},
-        "ghcr.io/devcontainers-contrib/features/pdm:1": {},
-        "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
+        "ghcr.io/devcontainers-contrib/features/pdm:2": {},
+        "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
         "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
             "packages": "bash-completion,iputils-ping,dnsutils"
         },
@@ -17,7 +17,8 @@
             "extensions": [
                 "ms-python.python",
                 "be5invis.toml",
-                "yzhang.markdown-all-in-one"
+                "yzhang.markdown-all-in-one",
+                "charliermarsh.ruff"
             ]
         }
     },
