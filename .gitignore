@@ -106,5 +106,5 @@ venv.bak/
 .python_packages
 
 # pdm
-.pdm.toml
+.pdm-python
 __pypackages__/
