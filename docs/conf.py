@@ -9,11 +9,10 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Union
 
 
-def get_py_config(path: Union[Path, str]):
-    """Get dynimic values from python code
+def get_py_config(path: Path | str):
+    """Get dynimic values from python code.
 
     Uses importlib.util tricks to import without the problems of edit sys.path
     and python lint missing imports
@@ -44,9 +43,9 @@ project_path = docs_path.parent
 
 # extract out the repo name from git
 repo_name = Path(
-    subprocess.check_output(["git", "config", "--get", "remote.origin.url"])
+    subprocess.check_output(["git", "config", "--get", "remote.origin.url"])  # noqa: S603, S607
     .decode("utf-8")
-    .strip()
+    .strip(),
 ).stem
 
 # per python standard you "can't" use import names with dash
@@ -62,7 +61,7 @@ sys.path.extend([str(docs_path), str(project_path), str(source_path)])
 project = repo_name
 
 author = "Viktor Freiman"
-copyright = f"{datetime.now().year}, {author}"
+copyright = f"{datetime.now().year}, {author}"  # noqa: A001, DTZ005
 
 # The full version, including alpha/beta/rc tags
 # https://pdm.fming.dev/latest/pyproject/build/#dynamic-version-from-file
@@ -158,7 +157,7 @@ html_theme_options = {"display_version": True}
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-# If this is not None, a ‘Last updated on:’ timestamp is inserted at every page bottom,
+# If this is not None, a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime() format.
 # The empty string is equivalent to '%b %d, %Y' (or a locale-dependent equivalent).
 html_last_updated_fmt = ""
@@ -170,7 +169,7 @@ manpages_url = "https://manpages.debian.org/{path}"
 
 # rinoh --list-templates
 rinoh_documents = [
-    dict(doc="index", target="manual", template="article"),
+    dict(doc="index", target="manual", template="article"),  # noqa: C408
 ]
 
 # replace in all rst files
