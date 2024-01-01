@@ -4,7 +4,7 @@ Development
 
 Includes
     - Debian based, per vscode devcontainer recommended base
-    - Lint: flake8
+    - Lint: ruff
     - Formater: black
     - QoL plugins for vscode
     - Added programs
@@ -49,6 +49,8 @@ it's installed and just run:
 .. code-block:: sh
 
     ./sws --root _build/html/
+    # OR use the alias
+    fast-html-docs
 
 It listens on port 80
 https://github.com/static-web-server/static-web-server
@@ -59,7 +61,7 @@ Intersphinx
 Intersphinx is a fantastic tool that enables you to automatic cross-reference and generating links other projects that uses sphinx.
 Run ``docs-helper`` and use the interactive guide to help with linking
 
-* `docs-helper <http://docs-helper.rtfd.io/>`
+* `docs-helper <http://docs-helper.rtfd.io/>`_
 * `rtd docs <https://docs.readthedocs.io/en/stable/guides/intersphinx.html>`_ about intersphinx
 * `sphobjinv <https://github.com/bskinn/sphobjinv>`_ is a tool to help linking with cross-reference
 
